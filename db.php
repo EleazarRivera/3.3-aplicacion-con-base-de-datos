@@ -1,11 +1,20 @@
 <?php
 session_start();
 
-$conn = mysqli_connect(
-  'localhost',
-  'root',
-  'password123',
-  'php_mysql_crud'
-) or die(mysqli_erro($mysqli));
 
+
+$DB_HOST= $_ENV["DB_HOST"];
+$DB_USER= $_ENV["DB_USER"];
+$DB_PASSWORD= $_ENV["DB_PASSWORD"];
+$DB_NAME= $_ENV["DB_NAME"];
+$DB_PORT= $_ENV["DB_PORT"];
+
+$conn = mysqli_connect(
+  "$DB_HOST",
+  "$DB_USER",
+  "$DB_PASSWORD",
+  "$DB_NAME",
+  "$DB_PORT"
+) or die(mysqli_error($mysqli));
 ?>
+
